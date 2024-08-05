@@ -17,10 +17,6 @@ The Device Identity Token (DIT) project leverages blockchain technology to creat
 8.  [Future Considerations](#future-considerations)
 9. [Contribution](#contribution)
 
-## Project Overview
-
-The DIT project addresses the critical issues of device verification and trust in online transactions. By creating unique, immutable tokens tied to physical devices, DITs provide a reliable method for verifying device ownership and condition. This system can be applied in various scenarios, including anti-Sybil measures and enhancing the safety and reliability of device marketplaces.
-
 ## Motivation
 
 The project was conceived in April 2024, inspired by the Chainlink yearly hackathon and a growing interest in blockchain technologies. While initially planned as a hackathon entry, it evolved into a passion project to explore the potential of blockchain in solving real-world trust issues in digital marketplaces.
