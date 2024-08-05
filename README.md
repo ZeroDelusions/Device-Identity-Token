@@ -238,7 +238,6 @@ Solidity:
 2. #### Deploy smart contracts
 
 	Get Sepolia $ETH or any other chain base currency equivalent. 
-	> [!TIP]
 	> Smart contract, firstly in development, were deployed on Polygon Mumbai, because of ease of getting test-net $MATIC, and low gas cots. But because of often chain instability, it disrupted work process. So later on, they were hosted on OP Sepolia network.
 	---
 	OP Sepolia faucets:
