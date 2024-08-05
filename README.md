@@ -294,14 +294,13 @@ Solidity:
 
 While this project demonstrates the potential of DITs, several areas require further development for real-world implementation:
 
--   Enhanced security measures against server emulation and device rooting/jailbreaking
+-   Enhanced security measures against bybapass by dedicated server, device emulation, and device rooting/jailbreaking
 -   Improved scalability and gas optimization
 -   Integration with existing marketplace and logistics systems
 -   Comprehensive security audits and penetration testing
 -   Development of a cross-platform version of the app
 -   Exploration of privacy-preserving techniques for sensitive device data
 -   Development of standardized APIs for integrating DITs with various services and platforms
--   Exploration of DIT applications in emerging technologies like augmented reality and smart cities
 -   Research into combining DITs with other blockchain technologies for enhanced functionality
 -   Investigation of regulatory compliance and legal frameworks for DIT implementation in various industries
 
