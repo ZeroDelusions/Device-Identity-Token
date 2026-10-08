@@ -1,35 +1,26 @@
 # Device Identity Token
 
-The Device Identity Token (DIT) project leverages blockchain technology to create unique, non-transferable tokens tied to individual physical devices. These tokens enable secure verification of device ownership, prevent Sybil attacks, and ensure reliable transactions in device marketplaces, extending the capabilities of Proof of Delivery (PoD) technology.
+The Device Identity Token (DIT) project uses blockchain technology to create unique, non-transferable tokens tied to individual physical devices. These tokens can be used as secure verification of device ownership, helping to prevent Sybil attacks. With extension to other usages as ensuring reliable transactions in device marketplaces, by extending the capabilities of Proof of Delivery (PoD) technology.
 
-> [!NOTE]
-> This project is in early prototype stage, with many features still in development. Consider this a conceptual demonstration.
+This project was done in April 2024 for Chainlink yearly hackathon
+
+https://github.com/user-attachments/assets/79cba330-67e9-40b4-b080-1af552a63666
+
+***
 
 ## Table of Contents
 
-1.  [Project Overview](#project-overview)
-2.  [Motivation](#motivation)
-3.  [Key Features](#key-features)
-4.  [Technical Implementation](#technical-implementation)
-5.  [Use Cases](#use-cases)
-6.  [Technologies Used](#technologies-used)
-7.  [Getting Started](#getting-started)
-8.  [Future Considerations](#future-considerations)
-9. [Contribution](#contribution)
-
-## Motivation
-
-The project was conceived in April 2024, inspired by the Chainlink yearly hackathon and a growing interest in blockchain technologies. While initially planned as a hackathon entry, it evolved into a passion project to explore the potential of blockchain in solving real-world trust issues in digital marketplaces.
+1.  [Key Features](#key-features)
+2.  [Technical Implementation](#technical-implementation)
+3.  [Use Cases](#use-cases)
+4.  [Technologies Used](#technologies-used)
+5.  [Getting Started](#getting-started)
 
 ## Key Features
 
--   Unique, non-transferable tokens tied to physical devices
+-   Minting and management of unique, non-transferable tokens tied to physical device
 -   Blockchain-based verification of device ownership
--   Integration with Proof of Delivery (PoD) systems
--   Enhanced security for device marketplaces
--   Anti-Sybil measures for web3 applications
--   Secure, app-based token minting and management
--   Escrow functionality for secure transactions
+-   Potential integration with Proof of Delivery (PoD) systems
 
 ## Technical Implementation
 
@@ -98,13 +89,13 @@ sequenceDiagram
 	end
 ```
 
-This flow ensures that each DIT is uniquely tied to a physical device and that all modifications are authenticated and traceable.
+This ensures that each DIT is tied to a physical device and that all modifications are authenticated and traceable.
 
 ### Non-Transferability and Escrow
 
-DITs are designed to be non-transferable, similar to Soulbound Tokens (SBTs), with a crucial exception:
+DITs are designed to be non-transferable, similar to Soulbound Tokens (SBTs), with important exception:
 
-1.  **Wallet Binding**: Each DIT is tightly bound to the wallet that minted it, representing true device ownership.
+1.  **Wallet Binding**: Each DIT is bound to the wallet that minted it, representing device ownership.
 2.  **Escrow Exception**: DITs can be temporarily transferred to an official escrow smart contract during transactions. This ensures secure handoffs while maintaining the integrity of ownership records.
 3.  **New Wallet for Sales**: Before selling a device, the owner must mint a new DIT on a fresh, empty wallet (e.g., on the device itself). This practice prevents unintended access to the seller's personal wallet.
 
@@ -154,37 +145,6 @@ flowchart TD
 
 This integration creates a tamper-evident chain of custody, enhancing trust and security in device transactions.
 
-## App Usage and Security
-
-### Core Functionality
-
-The DIT app serves as the primary interface for users to interact with the DIT ecosystem. Its main functions include:
-
-1.  **Minting**: Create a new DIT for a device
-2.  **Updating**: Modify DIT information (e.g., ownership transfer)
-3.  **Burning**: Permanently destroy a DIT
-
-### Security Measures
-
-To ensure the integrity of DITs and prevent unauthorized modifications, the app implements several security measures:
-
-1.  **Private Key Signing**: The app holds a private key used to sign all transaction requests. This signature is verified on-chain to ensure requests come from the official app.
-2.  **Public Key Recovery**: The smart contract recovers the public key from each signature and compares it to the stored official app public key.
-3.  **Unique Signature Verification**: Each transaction must have a unique signature to prevent replay attacks. The smart contract maintains a record of used signatures.
-4.  **Device Data Collection**: The app collects specific device data to create a unique fingerprint, ensuring the DIT is tied to a real, physical device.
-
-### Usage Process
-
-1.  **Device Scanning**: The app scans the device to collect unique identifiers.
-2.  **Data Hashing**: Collected data is hashed to create a unique DIT identifier.
-3.  **Transaction Creation**: The app prepares a transaction with the DIT data and a unique message.
-4.  **Signing**: The message is signed with the app's private key.
-5.  **Blockchain Interaction**: The signed transaction is sent to the blockchain for processing.
-6.  **Verification**: The smart contract verifies the signature and processes the request.
-7. **Escrow (for transactions)**: In sale scenarios, the DIT is transferred to the escrow contract until the transaction is complete.
-
-This process ensures that only authorized devices can mint or modify DITs, maintaining the integrity of the ecosystem.
-
 ## Use Cases
 
 1.  **Decentralized Marketplace Enhancement**
@@ -215,8 +175,6 @@ This process ensures that only authorized devices can mint or modify DITs, maint
     -   Secure ownership and control of smart home devices
     -   Streamlined transfer of IoT device ownership
     -   Integration with smart city infrastructure
-
-These expanded use cases demonstrate the versatility of DITs in various scenarios, from everyday rentals to complex industrial applications. The ability to securely transfer and track ownership, combined with time-limited access control, opens up numerous possibilities for enhancing trust and efficiency in digital and physical asset management.
 
 ## Technologies Used
 
@@ -284,21 +242,3 @@ Solidity:
 	| APP_PRIVATE_KEY| *Generated private key* |
 
 	**You are all set!** 
-
-## Future Considerations
-
-While this project demonstrates the potential of DITs, several areas require further development for real-world implementation:
-
--   Enhanced security measures against bybapass by dedicated server, device emulation, and device rooting/jailbreaking
--   Improved scalability and gas optimization
--   Integration with existing marketplace and logistics systems
--   Comprehensive security audits and penetration testing
--   Development of a cross-platform version of the app
--   Exploration of privacy-preserving techniques for sensitive device data
--   Development of standardized APIs for integrating DITs with various services and platforms
--   Research into combining DITs with other blockchain technologies for enhanced functionality
--   Investigation of regulatory compliance and legal frameworks for DIT implementation in various industries
-
-# Contribution
-
-This project is a labor of love, born from a passion for blockchain technology and its potential to revolutionize device authentication and marketplace trust. It's a work in progress and open to contributions. For any questions, suggestions, or if you'd like to join in this exciting journey, please open an issue or submit a pull request.
